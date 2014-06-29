@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Etimo.Common.Collections")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Common classes published by Etimo")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Etimo")]
 [assembly: AssemblyProduct("Etimo.Common.Collections")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
