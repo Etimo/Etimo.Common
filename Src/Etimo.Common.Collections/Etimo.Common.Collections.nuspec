@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Etimo.Common.Collections</id>
-    <!--<version>1.0</version>-->
+    <version>1.0.3</version>
     <title>Etimo.Common.Collections</title>
     <authors>Etimo</authors>
     <owners>Etimo</owners>
