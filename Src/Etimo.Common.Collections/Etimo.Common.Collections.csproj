@@ -39,19 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comparers\ArrayValueComparer.cs" />
-    <Compile Include="Comparers\EnumerableComparer.cs" />
+    <Compile Include="Comparers\DelegatedDefaultEqualityComparer.cs" />
+    <Compile Include="Comparers\EnumerableSequenceEqualsComparer.cs" />
     <Compile Include="ExtensionMethods\AddRangeExtension.cs" />
-    <Compile Include="KeyedCollections\ByKeyWrapper.cs" />
+    <Compile Include="KeyedCollections\IndexedMapping.cs" />
     <Compile Include="KeyedCollections\DelegatedKeyedCollection.cs" />
     <Compile Include="KeyedCollections\IKeyedCollection.cs" />
     <Compile Include="KeyedCollections\IKeyedCollectionBase.cs" />
     <Compile Include="KeyedCollections\IMultiValueKeyedCollection.cs" />
-    <Compile Include="KeyedCollections\MultiplyKeyedKeyedCollectionBase.cs" />
+    <Compile Include="KeyedCollections\MultiplyIndexedKeyedCollectionBase.cs" />
     <Compile Include="KeyedCollections\MultiValueDelegatedKeyedCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Etimo.Common.Collections.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

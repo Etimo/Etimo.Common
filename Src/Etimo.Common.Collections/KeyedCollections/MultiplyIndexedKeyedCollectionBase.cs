@@ -5,28 +5,28 @@ using System.Linq;
 
 namespace Etimo.Common.Collections.KeyedCollections
 {
-    public class MultiplyKeyedKeyedCollectionBase<TValue> : ICollection<TValue>
+    public class MultiplyIndexedKeyedCollectionBase<TValue> : ICollection<TValue>
     {
         readonly HashSet<TValue> _valueSet = new HashSet<TValue>();
         readonly HashSet<ICollection<TValue>> _mappings = new HashSet<ICollection<TValue>>();
 
-        protected ByKeyWrapper<TKey, TValue, TValue> CreateAndRegisterOneToOneMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer)
+        protected IndexedMapping<TKey, TValue, TValue> CreateAndRegisterIndexedOneToOneMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer)
         {
             DelegatedKeyedCollection<TKey, TValue> delegatedKeyedCollection = new DelegatedKeyedCollection<TKey, TValue>(getKeyForItemDelegate, equalityComparer);
             this._mappings.Add(delegatedKeyedCollection);
 
-            return new ByKeyWrapper<TKey, TValue, TValue>(delegatedKeyedCollection);
+            return new IndexedMapping<TKey, TValue, TValue>(delegatedKeyedCollection);
         }
 
-        protected ByKeyWrapper<TKey, TValue, IEnumerable<TValue>> CreateAndRegisterOneToManyMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer)
+        protected IndexedMapping<TKey, TValue, IEnumerable<TValue>> CreateAndRegisterIndexedOneToManyMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer)
         {
             MultiValueDelegatedKeyedCollection<TKey, TValue> multiValueDelegatedKeyedCollection = new MultiValueDelegatedKeyedCollection<TKey, TValue>(getKeyForItemDelegate, equalityComparer);
             this._mappings.Add(multiValueDelegatedKeyedCollection);
 
-            return new ByKeyWrapper<TKey, TValue, IEnumerable<TValue>>(multiValueDelegatedKeyedCollection);
+            return new IndexedMapping<TKey, TValue, IEnumerable<TValue>>(multiValueDelegatedKeyedCollection);
         }
 
-        IEnumerable<ICollection<TValue>> EnumerateAllCollections()
+        private IEnumerable<ICollection<TValue>> EnumerateAllCollections()
         {
             return new[] { this._valueSet }
                 .Union(this._mappings.AsEnumerable());

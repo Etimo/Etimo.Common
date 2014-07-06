@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Etimo.Common.Collections.KeyedCollections
 {
-    public class MultiValueDelegatedKeyedCollection<TKey, TValue> : IMultiValueKeyedCollection<TKey, TValue, HashSet<TValue>>
+    internal class MultiValueDelegatedKeyedCollection<TKey, TValue> : IMultiValueKeyedCollection<TKey, TValue, HashSet<TValue>>
     {
         private readonly Func<TValue, TKey> _getKeyForItemDelegate;
         private readonly DelegatedKeyedCollection<TKey, HashSet<TValue>> _delegatedKeyedCollection;

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Etimo.Common.Collections.Comparers
 {
-    public class EnumerableComparer<T> : IEqualityComparer<IEnumerable<T>>
+    public class EnumerableSequenceEqualsComparer<T> : IEqualityComparer<IEnumerable<T>>
     {
         public bool Equals(IEnumerable<T> x, IEnumerable<T> y)
         {
