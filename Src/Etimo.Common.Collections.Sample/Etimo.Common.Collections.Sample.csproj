@@ -58,6 +58,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\The World Bank - GDP Per Capita.csv" />
+    <None Include="Etimo.Common.Collections.Sample.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
