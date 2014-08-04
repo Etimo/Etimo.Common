@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0AEF7E77-AD25-4D1A-8E37-6A438FB4A23C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Etimo.Common.Collections.Sample</RootNamespace>
     <AssemblyName>Etimo.Common.Collections.Sample</AssemblyName>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Etimo.Common.Collections">
       <HintPath>..\packages\Etimo.Common.Collections.1.1.0\lib\net40\Etimo.Common.Collections.dll</HintPath>
@@ -45,17 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Collections\MultiplyIndexedKeyedCollectionOfCountryOrRegionGdpData.cs" />
-    <Compile Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Collections\StandardKeyedCollectionOfCountryOrRegionGdpData.cs" />
-    <Compile Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\CountryOrRegionGdpData.cs" />
-    <Compile Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\DataImporter.cs" />
-    <Compile Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Sample.cs" />
-    <Compile Include="Program.cs" />
+    <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Collections\MultiplyIndexedKeyedCollectionOfCountryOrRegionGdpData.cs" />
+    <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Collections\StandardKeyedCollectionOfCountryOrRegionGdpData.cs" />
+    <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\CountryOrRegionGdpData.cs" />
+    <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\DataImporter.cs" />
+    <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Sample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\The World Bank - GDP Per Capita.csv" />
+    <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\The World Bank - GDP Per Capita.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
