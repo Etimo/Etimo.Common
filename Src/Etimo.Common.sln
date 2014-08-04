@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etimo.Common.Collections", "Etimo.Common.Collections\Etimo.Common.Collections.csproj", "{4782B6F8-6B51-4FF8-B115-FDC13048269C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etimo.Common.Collections.Sample", "Etimo.Common.Collections.Sample\Etimo.Common.Collections.Sample.csproj", "{0AEF7E77-AD25-4D1A-8E37-6A438FB4A23C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4782B6F8-6B51-4FF8-B115-FDC13048269C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4782B6F8-6B51-4FF8-B115-FDC13048269C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4782B6F8-6B51-4FF8-B115-FDC13048269C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEF7E77-AD25-4D1A-8E37-6A438FB4A23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEF7E77-AD25-4D1A-8E37-6A438FB4A23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEF7E77-AD25-4D1A-8E37-6A438FB4A23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEF7E77-AD25-4D1A-8E37-6A438FB4A23C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
