@@ -14,8 +14,13 @@ namespace Samples.Etimo.Common.Collections.KeyedCollections.Collections
 
         public MultiplyIndexedKeyedCollectionOfCountryOrRegionGdpData()
         {
-            this.ByCountryCode = CreateAndRegisterIndexedOneToOneMapping(countryOrRegionGdpData => countryOrRegionGdpData.CountryCode, null);
-            this.ByCountryName = CreateAndRegisterIndexedOneToOneMapping(countryOrRegionGdpData => countryOrRegionGdpData.CountryName, EqualityComparer<string>.Default);
+            // Here we do not explicitly specify any equality comparer, so a default equality comparer will be used
+            this.ByCountryCode = CreateAndRegisterIndexedOneToOneMapping(countryOrRegionGdpData => countryOrRegionGdpData.CountryCode);
+
+            // When specifying null as equality comparer, a default equality comparer will be used (just like the previous case)
+            this.ByCountryName = CreateAndRegisterIndexedOneToOneMapping(countryOrRegionGdpData => countryOrRegionGdpData.CountryName, null);
+
+            // It is also possible to explicitly specify an equality comparer
             this.ByHasFiveDoubled = CreateAndRegisterIndexedOneToManyMapping(countryOrRegionGdpData => countryOrRegionGdpData.GdpYear2010 >= countryOrRegionGdpData.GdpYear1960 * 5, EqualityComparer<bool>.Default);
             this.ByHasTenDoubled = CreateAndRegisterIndexedOneToManyMapping(countryOrRegionGdpData => countryOrRegionGdpData.GdpYear2010 >= countryOrRegionGdpData.GdpYear1960 * 10, EqualityComparer<bool>.Default);
             this.ByHasTwentyDoubled = CreateAndRegisterIndexedOneToManyMapping(countryOrRegionGdpData => countryOrRegionGdpData.GdpYear2010 >= countryOrRegionGdpData.GdpYear1960 * 20, EqualityComparer<bool>.Default);
