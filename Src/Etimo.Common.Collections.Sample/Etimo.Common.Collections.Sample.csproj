@@ -37,9 +37,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Etimo.Common.Collections">
-      <HintPath>..\packages\Etimo.Common.Collections.1.1.0\lib\net40\Etimo.Common.Collections.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,7 +58,6 @@
   <ItemGroup>
     <Content Include="Content\Samples\Etimo.Common.Collections\KeyedCollections\Data\The World Bank - GDP Per Capita.csv" />
     <None Include="Etimo.Common.Collections.Sample.nuspec" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
