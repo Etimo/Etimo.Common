@@ -10,7 +10,7 @@ namespace Etimo.Common.Collections.KeyedCollections
         readonly HashSet<TValue> _valueSet = new HashSet<TValue>();
         readonly HashSet<ICollection<TValue>> _mappings = new HashSet<ICollection<TValue>>();
 
-        protected IndexedMapping<TKey, TValue, TValue> CreateAndRegisterIndexedOneToOneMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer)
+        protected IndexedMapping<TKey, TValue, TValue> CreateAndRegisterIndexedOneToOneMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer = null)
         {
             DelegatedKeyedCollection<TKey, TValue> delegatedKeyedCollection = new DelegatedKeyedCollection<TKey, TValue>(getKeyForItemDelegate, equalityComparer);
             this._mappings.Add(delegatedKeyedCollection);
@@ -18,7 +18,7 @@ namespace Etimo.Common.Collections.KeyedCollections
             return new IndexedMapping<TKey, TValue, TValue>(delegatedKeyedCollection);
         }
 
-        protected IndexedMapping<TKey, TValue, IEnumerable<TValue>> CreateAndRegisterIndexedOneToManyMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer)
+        protected IndexedMapping<TKey, TValue, IEnumerable<TValue>> CreateAndRegisterIndexedOneToManyMapping<TKey>(Func<TValue, TKey> getKeyForItemDelegate, IEqualityComparer<TKey> equalityComparer = null)
         {
             MultiValueDelegatedKeyedCollection<TKey, TValue> multiValueDelegatedKeyedCollection = new MultiValueDelegatedKeyedCollection<TKey, TValue>(getKeyForItemDelegate, equalityComparer);
             this._mappings.Add(multiValueDelegatedKeyedCollection);
